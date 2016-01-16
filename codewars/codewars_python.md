@@ -13,7 +13,7 @@ that takes in a string str(text in Python) and an object/hash/dict what and retu
     remove('apples and bananas',{'a':50, 'n':1}) == 'pples d bnns'
     # we don't have 50 a's, so just remove it till we hit end of string.
 
-### 考察 
+### check 
 
 def replace(self, old, new, count=-1) 
 Inferred type: (self: str, old: str, new: str, count: Integral) -> str   
@@ -27,4 +27,21 @@ def remove(text, what):
     return text
 ```
 
-## 2. 
+## 2. Group in 10s
+
+Write a function groupIn10s which takes any number of arguments, and groups them into sets of 10s and sorts each group in ascending order.
+
+The return value should be an array of arrays, so that numbers between 0-9 inclusive are in position 0 and numbers 10-19 are in position 1, etc.
+
+Here's an example of the required output:
+
+    grouped = group_in_10s(8, 12, 38, 3, 17, 19, 25, 35, 50) 
+
+    grouped[0]     # [3, 8]
+    grouped[1]     # [12, 17, 19]
+    grouped[2]     # [25]
+    grouped[3]     # [35, 38]
+    grouped[4]     # None
+    grouped[5]     # [50]
+
+### [link url][http://www.codewars.com/kata/5694d22eb15d78fe8d00003a/train/python]
