@@ -44,4 +44,39 @@ Here's an example of the required output:
     grouped[4]     # None
     grouped[5]     # [50]
 
-### [link url][http://www.codewars.com/kata/5694d22eb15d78fe8d00003a/train/python]
+### [link url][1]
+
+### Check
+
+改题目考察了入参形式： f(arg1, arg2) --> f(x, y) 
+
+f(*args)  传入的是一个元组 f(1, 2, 3, 5)
+
+f(**args) 传入一个Map f(a = 1, b = 2)
+
+### solution
+
+```python
+
+n_10s(*nums):
+    if not nums:
+        return []
+    nums = list(nums)
+    nums.sort()
+    l = int(nums[-1] // 10 + 1)
+
+    ret = []
+    for i in range(l):
+        ret.append([])
+    for num in nums:
+        i = num // 10
+        ret[i].append(num)
+    for i in range(l):
+        if len(ret[i]) == 0:
+            ret[i] = None
+    return ret
+print(group_in_10s(1, 22, 33, 4, 56))
+print(group_in_10s())
+```
+
+[1]: [http://www.codewars.com/kata/5694d22eb15d78fe8d00003a/train/python]
