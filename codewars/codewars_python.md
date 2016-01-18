@@ -105,3 +105,60 @@ def DNA_strand(dna):
 
 ```
 
+
+# 4. Unary function chainer
+
+Your task is to write a higher order function for chaining together a list of unary functions. In other words, it should return a function that does a left fold on the given functions.
+
+    chained([a,b,c,d])(input)
+
+Should yield the same result as
+
+    d(c(b(a(input))))
+
+函数式编程  递归
+
+```python
+def test():
+    return lambda x: x + 2
+# 调用
+test()(2)
+```
+# Solution
+
+
+# 5. [Beginner Series #3 Sum of Numbers][5]
+
+[5]: [http://www.codewars.com/kata/55f2b110f61eb01779000053/train/python/56962db8d0417b3baf000023]
+
+Given two integers, which can be positive and negative, find the sum of all the numbers between including them too and return it. If both numbers are equal return a or b.
+
+Note! a and b are not ordered!
+
+    Example: 
+    get_sum(1, 0) == 1   // 1 + 0 = 1
+    get_sum(1, 2) == 3   // 1 + 2 = 3
+    get_sum(0, 1) == 1   // 0 + 1 = 1
+    get_sum(1, 1) == 1   // 1 Since both are same
+    get_sum(-1, 0) == -1 // -1 + 0 = -1
+    get_sum(-1, 2) == 2  // -1 + 0 + 1 + 2 = 2
+
+### Check 
+考察 sum()函数 以及 max() min() 函数
+
+### Solution
+
+```python
+
+def get_sum(a, b):
+    sum = 0
+    if a > b:
+        a, b = b, a
+    for i in range(a, b + 1):
+        sum += i
+    return sum
+
+def get_sum(a, b):
+    return sum(xrange(min(a, b), max(a, b) + 1))
+
+```
