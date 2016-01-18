@@ -1,10 +1,3 @@
-## 题目列表
-
--  1. [Not all but sometimes all][1]
--  1. [Not all but sometimes all][1]
--  1. [Not all but sometimes all][1]
--  1. [Not all but sometimes all][1]
--  1. [Not all but sometimes all][1]
 
 ## 1. [Not all but sometimes all](http://www.codewars.com/kata/564ab935de55a747d7000040/train/python)
 
