@@ -6,9 +6,7 @@
 -  1. [Not all but sometimes all][1]
 -  1. [Not all but sometimes all][1]
 
-## 1. [Not all but sometimes all][1]
-
-  [1]: [http://www.codewars.com/kata/564ab935de55a747d7000040/train/python]
+## 1. [Not all but sometimes all](http://www.codewars.com/kata/564ab935de55a747d7000040/train/python)
 
 Write
 
