@@ -1,6 +1,6 @@
 ## 1. [Not all but sometimes all][1]
 
-    [1]: [http://www.codewars.com/kata/564ab935de55a747d7000040/train/python]
+  [1]: [http://www.codewars.com/kata/564ab935de55a747d7000040/train/python]
 
 Write
 
@@ -31,7 +31,7 @@ def remove(text, what):
 
 ## 2. [Group in 10s][2]
 
-    [2]: [http://www.codewars.com/kata/5694d22eb15d78fe8d00003a/train/python]
+  [2]: [http://www.codewars.com/kata/5694d22eb15d78fe8d00003a/train/python]
 
 Write a function groupIn10s which takes any number of arguments, and groups them into sets of 10s and sorts each group in ascending order.
 
@@ -47,8 +47,6 @@ Here's an example of the required output:
     grouped[3]     # [35, 38]
     grouped[4]     # None
     grouped[5]     # [50]
-
-### [link url][1]
 
 ### Check
 
@@ -86,7 +84,7 @@ print(group_in_10s())
 
 ## 3. [Complementary DNA][3]
 
-    [3]: [http://www.codewars.com/kata/554e4a2f232cdd87d9000038/train/python]
+  [3]: [http://www.codewars.com/kata/554e4a2f232cdd87d9000038/train/python]
 
 Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells and carries the "instructions" for the development and functioning of living organisms.
 
@@ -112,7 +110,7 @@ def DNA_strand(dna):
 
 # 4. [Unary function chainer][4]
 
-    [4]: [http://www.codewars.com/kata/54ca3e777120b56cb6000710/train/python]
+  [4]: [http://www.codewars.com/kata/54ca3e777120b56cb6000710/train/python]
 
 Your task is to write a higher order function for chaining together a list of unary functions. In other words, it should return a function that does a left fold on the given functions.
 
@@ -135,7 +133,7 @@ test()(2)
 
 # 5. [Beginner Series #3 Sum of Numbers][5]
 
-    [5]: [http://www.codewars.com/kata/55f2b110f61eb01779000053/train/python/56962db8d0417b3baf000023]
+  [5]: [http://www.codewars.com/kata/55f2b110f61eb01779000053/train/python/56962db8d0417b3baf000023]
 
 Given two integers, which can be positive and negative, find the sum of all the numbers between including them too and return it. If both numbers are equal return a or b.
 
