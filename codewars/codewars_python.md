@@ -1,4 +1,6 @@
-## 1. Not all but sometimes all
+## 1. [Not all but sometimes all]
+
+[1]: [http://www.codewars.com/kata/564ab935de55a747d7000040/train/python]
 
 Write
 
@@ -27,7 +29,9 @@ def remove(text, what):
     return text
 ```
 
-## 2. Group in 10s
+## 2. [Group in 10s]
+
+[2]: [http://www.codewars.com/kata/5694d22eb15d78fe8d00003a/train/python]
 
 Write a function groupIn10s which takes any number of arguments, and groups them into sets of 10s and sorts each group in ascending order.
 
@@ -79,10 +83,10 @@ print(group_in_10s(1, 22, 33, 4, 56))
 print(group_in_10s())
 ```
 
-[1]: [http://www.codewars.com/kata/5694d22eb15d78fe8d00003a/train/python]
 
+## 3. [Complementary DNA]
 
-## 3. Complementary DNA
+[3]: [http://www.codewars.com/kata/554e4a2f232cdd87d9000038/train/python]
 
 Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells and carries the "instructions" for the development and functioning of living organisms.
 
