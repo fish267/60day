@@ -57,7 +57,7 @@ f(**args) 传入一个Map f(a = 1, b = 2)
 
 ```python
 
-n_10s(*nums):
+def group_in_10s(*nums):
     if not nums:
         return []
     nums = list(nums)
