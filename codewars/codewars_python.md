@@ -113,7 +113,53 @@ Should yield the same result as
 
     d(c(b(a(input))))
 
+### 调用测试
+
+
+    def f1(x): return x*2
+    def f2(x): return x+2
+    def f3(x): return x**2
+
+    def f4(x): return x.split()
+    def f5(xs): return [x[::-1].title() for x in xs]
+    def f6(xs): return "_".join(xs)
+
+
+    test.assert_equals( chained([f1,f2,f3])(0), 4 )
+    test.assert_equals( chained([f1,f2,f3])(2), 36 )
+    test.assert_equals( chained([f3,f2,f1])(2), 12 )
+
+    test.assert_equals( chained([f4,f5,f6])("lorem ipsum dolor"), "Merol_Muspi_Rolod")
+
+
+# check
+
 函数式编程  递归
+
+
+返回函数
+```python
+def outter():
+    print('Call function ' + sys._getframe().f_code.co_name)
+
+    def inner():
+        print('Call function ' + sys._getframe().f_code.co_name)
+
+    return inner
+
+t = outter()
+
+# t 加上括号，就使用了 inner 函数
+t()
+
+### 输出
+
+Call function outter
+Call function inner
+
+```
+
+如果里面内容不复杂，使用 lambda 直接写出来
 
 ```python
 def test():
@@ -121,7 +167,47 @@ def test():
 # 调用
 test()(2)
 ```
+
+本题目，也可以用 reduce 高阶函数，入参是一个list, 用一个少一个
+
+ 
+使用文档说明
+
+    reduce(function, sequence[, initial]) -> value
+
+    Apply a function of two arguments cumulatively to the items of a sequence, from left to right, so as to reduce the sequence to a single value.
+    For example, reduce(lambda x, y: x+y, [1, 2, 3, 4, 5]) calculates ((((1+2)+3)+4)+5). 
+    If initial is present, it is placed before the items of the sequence in the calculation, and serves as a default when the sequence is empty.
+
+```python
+
+def f(x, y):
+    return x + y
+
+print(reduce(f, [1, 2, 3, 4])
+print(reduce(lambda x, y: x + y, [1, 2, 3, 4]))
+
+# 输出 10
+```
+
+
+
 # Solution
+
+```python
+def chained(functions):
+    def inner(param):
+        for function in functions:
+            param = function(param)
+        return param
+
+    return inner
+```
+
+```python
+def chained(functions):
+    return (lambda x: reduce(lambda v, f: f(v), functions, x))
+```
 
 
 # 5. [Beginner Series #3 Sum of Numbers](http://www.codewars.com/kata/55f2b110f61eb01779000053/train/python/56962db8d0417b3baf000023)
