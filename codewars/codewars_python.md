@@ -243,3 +243,38 @@ def get_sum(a, b):
     return sum(xrange(min(a, b), max(a, b) + 1))
 
 ```
+
+# 6. [Duplicate Encoder](http://www.codewars.com/kata/54b42f9314d9229fd6000d9c/train/python)
+
+The goal of this exercise is to convert a string to a new string where each character in the new string is '(' if that character appears only once in the original string, or ')' if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
+
+Examples:
+
+    "din" => "((("
+
+    "recede" => "()()()"
+
+    "Success" => ")())())"
+
+    "(( @" => "))(("
+
+## Check
+
+考察的是英语水平...
+
+    def count(self, sub, start=None, end=None) Inferred type: (self: str, sub: str, start: Optional[Integral], end: Integral | None) -> int   
+    S.count(sub[, start[, end]]) -> int
+    Return the number of non-overlapping occurrences of substring sub in string S[start:end]. Optional arguments start and end are interpreted as in slice notation
+
+## Solution
+
+```python
+def duplicate_encode(word):
+    ret = ''
+    ret.count()
+    for i in word.upper():
+        ret += ')' if word.upper().count(i) > 1 else '('
+    return ret
+print(duplicate_encode('Success'))
+```
+
