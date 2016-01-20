@@ -317,4 +317,3 @@ def new_avg(arr, newavg):
     else:
         return ret
 ```
-
