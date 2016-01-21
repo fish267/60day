@@ -350,7 +350,7 @@ def triple_double(num1, num2):
 
 # 9. [Validate Credit Card Number](http://www.codewars.com/kata/5418a1dd6d8216e18a0012b2/train/python)
 
-In this Kata, you will implement The Luhn Algorithm, which is used to help validate credit card numbers.
+In this Kata, you will implement The [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm), which is used to help validate credit card numbers.
 
 Given a positive integer of up to 16 digits, return true if it is a valid credit card number, and false if it is not.
 
@@ -382,4 +382,35 @@ Here is the algorithm:
 
      8 does not equal 0, so 891 is not a valid credit card number.
 
+
+## Check
+
+  好像是练习 for 循环的... 
+
+
+  关键的是忽略提示，去从wiki上提炼出这个算法~ English~
+
+## Solution
+
+```python
+
+def validate(n):
+    l = [int(x) for x in list(str(n))]
+    length = len(l)
+    if len(l) % 2 == 0:
+        for i in range(length):
+            if i % 2 == 0:
+                l[i] += l[i]
+    else:
+        for i in range(length):
+            if i % 2 == 1:
+                l[i] += l[i]
+    for i in range(length):
+        if l[i] > 9:
+            l[i] = l[i] - 9
+    return sum(l) % 10 == 0
+
+#print(validate(12345))
+
+```
 
