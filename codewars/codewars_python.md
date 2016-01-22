@@ -414,3 +414,97 @@ def validate(n):
 
 ```
 
+# 10. [Dbftbs Djqifs](http://www.codewars.com/kata/546937989c0b6ab3c5000183/train/python)
+
+aesar Ciphers are one of the most basic forms of encryption. It consists of a message and a key, and it shifts the letters of the message for the value of the key.
+
+Your task is to create a function encryptor that takes 2 arguments - key and message - and returns the encrypted message.
+
+    A message 'Caesar Cipher' and a key of 1 returns 'Dbftbs Djqifs'.
+
+    A message 'Caesar Cipher' and a key of -1 returns 'Bzdrzq Bhogdq'.
+
+Make sure to only shift letters, and be sure to keep the cases of the letters the same. All punctuation, numbers, spaces, and so on should remain the same.
+
+Also be aware of keys greater than 26 and less than -26. There's only 26 letters in the alphabet!
+
+## Check
+
+好基本的字母移动, ord(a)  chr(36)
+
+## Solution
+```python
+
+def encryptor(key, message):
+    ret = ''
+    l = []
+    low_letter = [chr(x) for x in range(ord('a'), ord('z') + 1)]
+    up_letter = [x.upper() for x in low_letter]
+    for t in message:
+        index = -1
+        for i in range(len(low_letter)):
+            if t == low_letter[i]:
+                index, l = i, low_letter
+                break;
+            if t == up_letter[i]:
+                index, l = i, up_letter
+                break;
+        if index == -1:
+            ret += t
+        else:
+            ret += l[(i + key) % 26]
+    return ret
+```
+
+# 11.[Triangle number check](http://www.codewars.com/kata/557e8a141ca1f4caa70000a6/train/python)
+
+Description:
+
+A triangle number is a number where n objects form an equilateral triangle (it's a bit hard to explain). For example, 6 is a triangle number because you can arrange 6 objects into an equilateral triangle:
+<pre>
+      1
+     2 3
+    4 5 6
+
+</pre>
+8 is not a triangle number because 8 objects do not form an equilateral triangle:
+
+<pre>
+   1
+  2 3
+ 4 5 6
+7 8
+
+</pre>
+In other words, the nth triangle number is equal to the sum of the n natural numbers from 1 to n.
+Your task:
+
+Check if a given input is a valid triangle number. Return true if it is, false if it is not (note that any non-integers, including non-number types, are not triangle numbers).
+
+You are encouraged to develop an effective algorithm: test cases include really big numbers.
+Assumptions:
+
+You may assume that the given input, if it is a number, is always positive.
+Notes:
+
+0 and 1 are triangle numbers.
+
+## Check
+
+是否是三角形的右下角， sum(range(n))
+
+## Solution
+
+```python
+
+def is_triangle_number(number):
+    try:
+        for i in range(number + 1):
+            if number == i * (i + 1) / 2:
+                return True
+                break
+        return False
+    except Exception:
+        return  False
+```
+
