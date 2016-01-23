@@ -508,3 +508,34 @@ def is_triangle_number(number):
         return  False
 ```
 
+# 12. [How many are smaller than me?](http://www.codewars.com/kata/56a1c074f87bc2201200002e/train/python)
+
+Write
+    maller(arr)
+
+that given an array arr, you have to return the amount of numbers that are smaller than arr[i] to the right.
+
+For example:
+
+    smaller([5, 4, 3, 2, 1]) == [4, 3, 2, 1, 0]
+    smaller([1, 2, 0]) == [1, 1, 0]
+
+If you've completed this one and you feel like testing your performance tuning of this same kata, head over to the much tougher version How many are smaller than me II?
+
+## Check
+
+右边的数字都比这个数小, 查数
+
+## Solution
+
+```python
+maller(arr):
+    ret = []
+    for i in range(len(arr)):
+        count = 0
+        for t in range(i + 1, len(arr)):
+            if arr[i] > arr[t]:
+                count += 1
+        ret.append(count)
+    return ret
+```
