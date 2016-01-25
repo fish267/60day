@@ -592,7 +592,7 @@ Example
 
 ## Check
 
-不区分大小写
+不区分大小写, set 来去重
 
 ## Solution
 
@@ -605,4 +605,6 @@ def duplicate_count(text):
             text = text.replace(t, '')
     return count
 
+def duplicate_count(text):
+    return len([x for x in set(s.upper()) if s.upper().count(x) > 1])
 
