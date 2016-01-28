@@ -698,6 +698,8 @@ Examples:
 
 理解数学公式， 该题目很恶心， 必须大于 2
 
+我日， 还有 log 这个公式。。 
+
 ## Solution
 
 ```python
@@ -724,4 +726,20 @@ def decompose(num):
         t += 1
     return [index, num]
 
+```
+
+```python
+
+from math import log
+
+def decompose(n):
+    i = 2
+    result = []
+    while n >= i*i:
+        k = int(log(n, i))
+        result.append(k)
+        n -= i ** k
+        i += 1
+    
+    return [result, n]
 ```
