@@ -654,3 +654,74 @@ tor(distance, bus_drive, bus_walk):
         return "Walk"
     return "Walk" if walk_time <= bus_time else "Bus"
 ```
+
+# 16. [Decompose a number](http://www.codewars.com/kata/decompose-a-number)
+
+Decompose a number <code>num</code> into an array (tuple in Haskell, array of arrays long[][] in C# or Java) of the form <code>[[k1,k2,k3...], r], ([k1,k2,k3...], r)</code> in Haskell, <code>[[k1,k2,k3...], [r]] in C# or Java)</code> such that:
+
+![x](https://os.alipayobjects.com/rmsportal/MxgykZPxWAkiahP.png)
+
+Examples:
+
+    # when there are no `k` more than 1:
+
+    3 
+
+    [[], 3] = 
+
+    3
+
+    # when the remainder is zero:
+
+    8330475
+
+    [[22, 13, 10, 8, 7, 6, 6, 5, 5, 5, 4, 4, 4, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2], 0] = 
+
+    2 ^ 22 + 3 ^ 13 + 4 ^ 10 + 5 ^ 8 + 6 ^ 7 + 7 ^ 6 + 8 ^ 6 + 9 ^ 5 + 10 ^ 5 + 11 ^ 5 + 12 ^ 4 + 13 ^ 4 + 14 ^ 4 + 15 ^ 3 + 16 ^ 3 + 17 ^ 3 + 18 ^ 3 + 19 ^ 3 + 20 ^ 3 + 21 ^ 2 + 22 ^ 2 + 23 ^ 2 + 24 ^ 2 + 0 = 8330475
+
+    # when there is both `k` and a remainder:
+
+    26 
+
+    [[4, 2], 1] = 
+
+    2 ^ 4 + 3 ^ 2 + 1 = 26
+
+    # when there is neither `k` nor a remainder:
+
+    0
+
+    [[], 0] = 
+
+    0
+## Check
+
+理解数学公式， 该题目很恶心， 必须大于 2
+
+## Solution
+
+```python
+def fetch_index(i, num):
+    if i ** 2 > num:
+        return 0, num
+    t = 2
+    while i ** t <= num:
+        t += 1
+    return t - 1, num - i ** (t - 1)
+
+
+def decompose(num):
+    if num == 3:
+        return [[], 3]
+    index = []
+    t = 2
+    while True:
+        i, num = fetch_index(t, num)
+        if i > 1:
+            index.append(i)
+        if num <= 1 or i == 0:
+            break
+        t += 1
+    return [index, num]
+
+```
