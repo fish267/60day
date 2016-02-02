@@ -743,4 +743,64 @@ def decompose(n):
     
     return [result, n]
 ```
-# 17.   
+
+# 17. [Common Denominators](http://www.codewars.com/kata/54d7660d2daf68c619000d95/train/python)
+
+Common denominators
+
+You will have a list of rationals in the form
+
+    [ [numer_1, denom_1] , ... [numer_n, denom_n] ]
+where all numbers are positive ints.
+
+You have to produce a result in the form
+
+    [ [N_1, D] ... [N_n, D] ]
+in which D is as small as possible and
+
+    N_1/D == numer_1/denom_1 ... N_n/D == numer_n,/denom_n.
+Example :
+
+    [ [1, 2], [1, 3], [1, 4] ] produces the array [ [6,12], [4,12], [3,12] ]
+
+## Check
+    
+类似求最小公倍数的, 先将每一个数约分， 然后分母的最小公倍数弄出来
+
+最小公倍数 = m * n / (m, n)的最大公约数
+
+最小公倍数， 用欧几里得辗转相除法， 否则会超时 
+    
+
+## Solution
+
+
+def gcd(a, b):
+    if a < b:
+        a, b = b, a
+
+    while b != 0:
+        temp = a % b
+        a = b
+        b = temp
+
+    return a
+
+
+def convertFracts(lst):
+    fz, fm = 1, 1
+    for l in lst:
+        gys = gcd(l[0], l[1])
+        l[0], l[1] = l[0] // gys, l[1] // gys
+
+    multiple = 1
+
+    for l in lst:
+        multiple = multiple * l[1] // gcd(multiple, l[1])
+    ret = []
+    for l in lst:
+        tmp = [multiple * l[0] // l[1], multiple // 1]
+        ret.append(tmp)
+    return ret
+
+
