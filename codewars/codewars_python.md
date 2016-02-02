@@ -803,4 +803,3 @@ def convertFracts(lst):
         ret.append(tmp)
     return ret
 
-
