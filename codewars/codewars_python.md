@@ -529,7 +529,7 @@ If you've completed this one and you feel like testing your performance tuning o
 ## Solution
 
 ```python
-maller(arr):
+def smaller(arr):
     ret = []
     for i in range(len(arr)):
         count = 0
@@ -596,6 +596,7 @@ Example
 
 ## Solution
 
+```python
 def duplicate_count(text):
     count = 0
     text = text.upper()
@@ -607,6 +608,7 @@ def duplicate_count(text):
 
 def duplicate_count(text):
     return len([x for x in set(s.upper()) if s.upper().count(x) > 1])
+```
 
 # 15. [Tube strike options calculator](http://www.codewars.com/kata/568ade64cfd7a55d9300003e/train/python)
 
@@ -659,7 +661,7 @@ tor(distance, bus_drive, bus_walk):
 
 Decompose a number <code>num</code> into an array (tuple in Haskell, array of arrays long[][] in C# or Java) of the form <code>[[k1,k2,k3...], r], ([k1,k2,k3...], r)</code> in Haskell, <code>[[k1,k2,k3...], [r]] in C# or Java)</code> such that:
 
-![x](https://os.alipayobjects.com/rmsportal/MxgykZPxWAkiahP.png)
+![x](https://os.alipayobjects.com/rmsportal/nhkirTSSLwivcqY.png)
 
 Examples:
 
@@ -774,7 +776,7 @@ Example :
 
 ## Solution
 
-
+```python
 def gcd(a, b):
     if a < b:
         a, b = b, a
@@ -802,4 +804,4 @@ def convertFracts(lst):
         tmp = [multiple * l[0] // l[1], multiple // 1]
         ret.append(tmp)
     return ret
-
+```
